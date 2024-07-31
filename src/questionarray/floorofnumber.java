@@ -1,6 +1,6 @@
 package questionarray;
 
-public class binarysearch {
+public class floorofnumber {
     public static void main(String[] args) {
         int[] arr={2,3,4,9,14,16,18};
         System.out.println(binarysearch(arr, 15));
@@ -22,7 +22,7 @@ public class binarysearch {
                 return mid;
             }
         }
-        return arr[start];
+        return arr[end];
 
     }
     
