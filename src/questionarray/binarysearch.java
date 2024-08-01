@@ -2,16 +2,17 @@ package questionarray;
 
 public class binarysearch {
     public static void main(String[] args) {
-        int[] arr={2,3,4,9,14,16,18};
-        System.out.println(binarysearch(arr, 15));
+        int[] arr={5,7,7,7,7,8,8,10};
+        System.out.println(binarysearch(arr, 7));
         
 
     }
     static int binarysearch(int[] arr , int target){
         int start =0;
         int end = arr.length-1;
+        int mid=0;
         while(start<=end){
-            int mid= start+(end-start)/2;
+            mid= start+(end-start)/2;
             if(arr[mid]<target){
                 start=mid+1;
             }
@@ -22,7 +23,7 @@ public class binarysearch {
                 return mid;
             }
         }
-        return arr[start];
+        return -1;
 
     }
     
