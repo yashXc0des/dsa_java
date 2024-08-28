@@ -3,6 +3,7 @@ package questionarray;
 public class floorofnumber {
     public static void main(String[] args) {
         int[] arr={2,3,4,9,14,16,18};
+        int num[] = new int[10];
         System.out.println(binarysearch(arr, 15));
         
 
