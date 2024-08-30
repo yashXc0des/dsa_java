@@ -1,3 +1,4 @@
+package questionarray;
 import java.util.Arrays;
 
 public class searchin2darray {

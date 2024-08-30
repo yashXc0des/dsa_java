@@ -40,7 +40,8 @@ public class searchInRotatedArray {
                 end = mid - 1;
             }
         }
-        return -1;  // Pivot not found, the array is not rotated
+        return -1;  // Pivot not found, the array is not rotated........
+        
     }
 
     public static int binarySearch(int[] arr, int target, int start, int end) {

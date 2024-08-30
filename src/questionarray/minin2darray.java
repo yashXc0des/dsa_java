@@ -1,3 +1,4 @@
+package questionarray;
 public class minin2darray {
     public static void main(String[] args) {
         int[][] array2d ={{8,3,4,4},{12,123,3,423},{32,4,3}};

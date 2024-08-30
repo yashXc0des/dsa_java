@@ -1,3 +1,4 @@
+package questionarray;
 import java.util.Scanner;
 
 public class minnumberinarray {

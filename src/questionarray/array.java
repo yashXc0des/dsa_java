@@ -1,3 +1,4 @@
+package questionarray;
 
 import java.util.ArrayList;
 import java.util.Scanner;

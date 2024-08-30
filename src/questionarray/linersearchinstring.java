@@ -1,3 +1,4 @@
+package questionarray;
 
 public class linersearchinstring {
     public static void main(String[] args) {
