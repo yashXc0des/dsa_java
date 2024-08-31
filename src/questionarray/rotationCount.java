@@ -3,8 +3,8 @@ package questionarray;
 public class rotationCount {
     public static void main(String[] args) {
         int[] arr= {12,30,40,2,3,4,6,8,9};
-        //System.out.println(findPivot(arr));
-        System.out.println(countOfRotation(arr));
+        System.out.println(findPivot(arr)+1);
+        //System.out.println(countOfRotation(arr));
         
     }
     public static int findPivot(int[] arr){
