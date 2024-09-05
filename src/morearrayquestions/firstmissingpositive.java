@@ -6,7 +6,7 @@ public class firstmissingpositive {
     public static void cyclicSort(int[] arr){
         int i=0;
         while(i<arr.length){
-            if(arr[i]>0&& arr[i]<arr.length){
+            if(arr[i]>0&& arr[i]<arr.){
                 int correectindex = arr[i]-1;
                 if(arr[i]!=arr[correectindex]){
                     int temp=arr[correectindex];
