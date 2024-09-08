@@ -34,12 +34,10 @@ public class sorting {
             }
         }
     }
+    // bubble sort i
 
     public static void main(String[] args) {
         int[] a = {5, 4, 3, 2, 1};
-
-        // You can test both sorting methods:
-        // insertionSort(a);
         cyclicSort(a);
 
         System.out.println(Arrays.toString(a)); // Should output [1, 2, 3, 4, 5]
