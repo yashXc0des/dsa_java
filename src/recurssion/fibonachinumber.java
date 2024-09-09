@@ -28,8 +28,8 @@ public class fibonachinumber {
         return reccfactorial(n-1)+reccfactorial(n-2);
     }
     public static void main(String[] args) {
-        System.out.println(reccfactorial(7));
+       Fibonachinumber(50);
     }
-    
+
     
 }
