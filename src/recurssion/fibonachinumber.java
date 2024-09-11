@@ -27,8 +27,14 @@ public class fibonachinumber {
         }
         return reccfactorial(n-1)+reccfactorial(n-2);
     }
+    public static int fibonachigoldenratio(int n){
+        return (int)((Math.pow(((1+Math.sqrt(5))/2), n)-Math.pow(((1-Math.sqrt(5))/2), n))/Math.sqrt(5.0));
+    }
     public static void main(String[] args) {
-       Fibonachinumber(50);
+       Fibonachinumber(5);
+       for (int i = 0; i < 10; i++) {
+        System.out.println(fibonachigoldenratio(i));
+       }
     }
 
     
