@@ -1,5 +1,7 @@
 package bitwise;
 
+import java.util.Arrays;
+
 public class operators {
     public static void main(String[] args) {
         // int a =10;
@@ -32,19 +34,21 @@ public class operators {
     public static int nthbite(int a,int n){
         return (a | n);
     }
-    public static int duplicates(int[] arr){
+    public static int[] duplicates(int[] arr){
+        StringBuilder ans = new StringBuilder();
         for(int i=0;i<arr.length;i++){
             int a=0;
+            
             for(int j=0;j<arr.length;j++){
                 if(arr[i]==arr[j]){
                     a++;
                 }
             }
-            if(a<2){
-                return arr[i];
+            if(a==2){
+                ans.append(arr[i]);
             }
         }
-        return -1;
+        return ans;
     }
     public static String decimalToBinary(int decimal){
         StringBuilder binary = new StringBuilder();
