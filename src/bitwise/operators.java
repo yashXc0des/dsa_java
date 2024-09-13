@@ -16,8 +16,10 @@ public class operators {
     //    System.out.println(setIthbit(8, 1));
     //    //System.out.println(printithbit(8, 3));
     //    System.out.println(resetIthbit(9, 4));
-    System.out.println(resetIthbit(9, 4));
-    }
+    // System.out.println(resetIthbit(9, 4));
+    printseriesnew(10);
+     }
+
     public static String isevenorod(int n ){
         if((n & 1)==1){
             return "odd";
@@ -33,22 +35,6 @@ public class operators {
     }
     public static int nthbite(int a,int n){
         return (a | n);
-    }
-    public static int[] duplicates(int[] arr){
-        StringBuilder ans = new StringBuilder();
-        for(int i=0;i<arr.length;i++){
-            int a=0;
-            
-            for(int j=0;j<arr.length;j++){
-                if(arr[i]==arr[j]){
-                    a++;
-                }
-            }
-            if(a==2){
-                ans.append(arr[i]);
-            }
-        }
-        return ans;
     }
     public static String decimalToBinary(int decimal){
         StringBuilder binary = new StringBuilder();
@@ -68,6 +54,8 @@ public class operators {
     public static int resetIthbit(int decimal,int ith ){
         return ( decimal & ~(1<<ith-1));
     }
+
+
 
     
 }
