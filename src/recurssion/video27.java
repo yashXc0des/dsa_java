@@ -60,10 +60,11 @@ public class video27 {
         return n %10*productofdigits(n/10);
     }
     public static int reverseanumber(int n){
-         if(n<=0){
-            return n;
-         }
-         return (reverseanumber(n/10))*10+n%2;
+        int sum =0;
+        static int rev1(int n){
+
+        }
+        
     }
 
 

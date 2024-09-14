@@ -17,7 +17,8 @@ public class operators {
     //    //System.out.println(printithbit(8, 3));
     //    System.out.println(resetIthbit(9, 4));
     // System.out.println(resetIthbit(9, 4));
-    printseriesnew(10);
+    // printseriesnew(10);
+    System.out.println(decimalToBinary(5));
      }
 
     public static String isevenorod(int n ){
