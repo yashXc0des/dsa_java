@@ -90,12 +90,7 @@ public class magicmumber {
                 }
                 return result;
             }
-        public static void main(String[] args) {
-            int[][] image={{1,1,0},{1,0,1},{0,0,0}};
-            flipAndInvertImage(image);
-            System.out.println(Arrays.deepToString(image));
-            
-    }
+
 
         public static int[][] flipAndInvertImage(int[][] image) {
             for(int i=0;i<image.length;i++){
@@ -119,5 +114,26 @@ public class magicmumber {
             }
             return image;
         }
+        public static  boolean isPrime(int n){
+            if(n<=1){
+                return false;
+            }
+            int c =2;
+            while(c*c<=n){
+                if(n%c==0){
+                    return false;
+                }
+                c++;
+            }
+            return true;
+        }
+        public static void main(String[] args) {
+            // int[][] image={{1,1,0},{1,0,1},{0,0,0}};
+            // flipAndInvertImage(image);
+            // System.out.println(Arrays.deepToString(image));
+            for(int i=1;i<20;i++){
+                System.out.println(i+" "+isPrime(i));
+            }
+    }
     
 }
