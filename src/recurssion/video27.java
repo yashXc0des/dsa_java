@@ -59,14 +59,6 @@ public class video27 {
         }
         return n %10*productofdigits(n/10);
     }
-    public static int reverseanumber(int n){
-        int sum =0;
-        static int rev1(int n){
-
-        }
-        
-    }
-
 
     public static void main(String[] args) {
         //printseriesboth(10);
@@ -74,7 +66,7 @@ public class video27 {
         ); 
         //System.out.println(sumofdigits(2345));   
         //System.out.println(productofdigits(123450));
-        System.out.println(reverseanumber(12345));
+        //System.out.println(reverseanumber(12345));
     }
     
 

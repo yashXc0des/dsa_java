@@ -2,6 +2,8 @@ package bitwise;
 
 import java.util.Arrays;
 
+import morearrayquestions.findallduplicates;
+
 public class magicmumber {
     public static int nthMagicnumber(int n){
             StringBuilder binaryRepresentation = new StringBuilder();
@@ -127,13 +129,32 @@ public class magicmumber {
             }
             return true;
         }
+        public static void seiveOfErathosthenes(int n,boolean[] primes){
+            for(int i=2;i*i<=n;i++){
+                if(primes[i]==false){
+                    for(int j=i*2;j<=n;j+=i){
+                        primes[j]=true;
+                    }
+                }
+            }
+        }
+        public static void isPrimesOptimised(int n ){
+            boolean[] primes=new boolean[n+1];
+            seiveOfErathosthenes(n, primes);
+            for(int i=2;i<=n;i++){
+                if(primes[i]==false){
+                    System.out.println(i);
+                }
+            }
+        }   
         public static void main(String[] args) {
             // int[][] image={{1,1,0},{1,0,1},{0,0,0}};
             // flipAndInvertImage(image);
             // System.out.println(Arrays.deepToString(image));
-            for(int i=1;i<20;i++){
-                System.out.println(i+" "+isPrime(i));
-            }
+            // for(int i=1;i<20;i++){
+            //     System.out.println(i+" "+isPrime(i));
+            // }
+            isPrimesOptimised(40);
     }
     
 }

@@ -16,7 +16,7 @@ public class setMissmatch {
             }
         }
     }
-    public int[] findErrorNums(int[] nums) {
+    public static int[] findErrorNums(int[] nums) {
         Cyclicsort(nums);
         int[] a = new int[2];
         for(int i=0;i<nums.length;i++){
