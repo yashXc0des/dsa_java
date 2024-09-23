@@ -1,7 +1,13 @@
 package linkedlist;
+
+import java.lang.classfile.components.ClassPrinter.ListNode;
+
+import recurssion.recurssion1;
+
 public class LinkedList {
     Node head;
     Node tail;
+    int size;
 
     LinkedList() {
         this.head = null;
@@ -15,10 +21,12 @@ public class LinkedList {
         if (head == null) {
             head = newNode;
             tail = newNode;
+            size++;
         } else {
             // For subsequent insertions, head is updated but tail remains unchanged
             newNode.next = head;
             head = newNode;
+            size++;
         }
     }
 
@@ -27,6 +35,7 @@ public class LinkedList {
         if (position == 0) {
             newNode.next = head;
             head = newNode;
+            size++;
             return;
         }
 
@@ -40,6 +49,7 @@ public class LinkedList {
         }
         newNode.next = currNode.next;
         currNode.next = newNode;
+        size++;
     }
 
     public void printList() {
@@ -111,23 +121,103 @@ public class LinkedList {
         }
         currNode.next=currNode.next.next;
     }
+    public Node insertionAtGivenPointRecursion(int data, int index, Node currentNode) {
+        // Base case: If the index is 0, create a new node
+        if (index == 0) {
+            Node newNode = new Node(data);
+            newNode.next = currentNode; // Link new node to the current node
+            return newNode; // Return the new node to update the link
+        }
+    
+        // If current node is null, index is out of bounds
+        if (currentNode == null) {
+            System.out.println("Index out of bounds");
+            return null; // Exit if we reach the end of the list without inserting
+        }
+    
+        // Recursive call: Move to the next node
+        currentNode.next = insertionAtGivenPointRecursion(data, index - 1, currentNode.next);
+    
+        // Return the current node (unchanged)
+        return currentNode;
+    }
+     public Node insertusingRecurssion(int data, int index, Node currentNode){
+        if(index==0){
+            Node newNode= new Node(data);
+            newNode.next=currentNode;
+            head=newNode;
+        }
+        if(currentNode==null){
+            System.out.println("list out of bound");
+            return null;
+        }
+        currentNode=insertusingRecurssion(data, index-1, currentNode.next);
+        return currentNode;
+     }
+    public void deleteDuplicates() {
+        Node currNode= head;
+        while(currNode!=null && currNode.next!=null){
+            if(currNode.data==currNode.next.data){
+                Node nextNode=currNode.next.next;
+                currNode.next=nextNode;
+            }
+            currNode=currNode.next;
+        }
+
+    }
+    public void deleteDuplicates2() {
+        Node currNode = head;
+    
+        while (currNode != null && currNode.next != null) {
+            if (currNode.data == currNode.next.data) {
+                // Skip the duplicate node
+                currNode.next = currNode.next.next;
+            } else {
+                // Move to the next node if no duplicate is found
+                currNode = currNode.next;
+            }
+        }
+    }
+    public void mergetwoSortedLinkedList(LinkedList list1,LinkedList list2){
+        LinkedList listresult=new LinkedList();
+        Node head1 = list1.head;
+        Node head2 = list2.head;
+        while(head1!=null &&head2!=null){
+            if(head1.data<=head2.data){
+                listresult.insertAtEnd(head1.data);
+                head1=head1.next;
+            }
+            else{
+                listresult.insertAtEnd(head2.data);
+                head2=head2.next;
+            }
+        } 
+        while(head1!=null){
+            listresult.insertAtEnd(head1.data);
+            head1=head1.next;
+        }
+        while(head2!=null){
+            listresult.insertAtEnd(head2.data);
+            head2=head2.next;
+        }
+        listresult.printList();
+    }
+    
+
 
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
-        list.insertAtBeginning(20);
-        list.insertAtBeginning(30);
-        list.insertAtBeginning(40);
-        list.insertAtBeginning(50);
-        list.insertAtBeginning(60);
-        list.insertAtBeginning(70);
-        list.insertInBetween(35, 4);
-        // list.insertAtEnd(10);
-        list.insertatEnd2(10);
-        list.printList();
-        list.deletionAtBeginning();
-        list.deleteFromEnd();
-        list.printList();
-        list.deleteFromSpecificPosition(3);
-        list.printList();
+        LinkedList list1=new LinkedList();
+        LinkedList list2= new LinkedList();
+        list1.insertAtBeginning(4);
+        list1.insertAtBeginning(2);
+        list1.insertAtBeginning(1);
+        list2.insertAtBeginning(4);
+        list2.insertAtBeginning(3);
+        list2.insertAtBeginning(1);
+        list1.printList();
+        list2.printList();
+        list.mergetwoSortedLinkedList(list1, list2);
     }
+
 }
