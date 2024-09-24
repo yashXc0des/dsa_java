@@ -178,7 +178,7 @@ public class LinkedList {
             }
         }
     }
-    public void mergetwoSortedLinkedList(LinkedList list1,LinkedList list2){
+    public LinkedList mergetwoSortedLinkedList(LinkedList list1,LinkedList list2){
         LinkedList listresult=new LinkedList();
         Node head1 = list1.head;
         Node head2 = list2.head;
@@ -200,8 +200,43 @@ public class LinkedList {
             listresult.insertAtEnd(head2.data);
             head2=head2.next;
         }
-        listresult.printList();
+        return listresult;
     }
+    public boolean happynumber(int number){
+        int slow=number;
+        int fast=number;
+        do{
+            slow=sqrtnum(slow);
+            fast=sqrtnum(sqrtnum(fast));
+            if(slow==1){
+                return true;
+            }
+        }while(slow!=fast);
+        if(slow==1){
+            return true;
+        }
+        return false;
+
+    }
+    public int sqrtnum(int number){
+        int sum =0;
+        while(number >0){
+            int rem = number%10;
+            sum +=rem *rem;
+            number/=10;
+        }
+        return sum;
+    }
+    public Node middleNode(Node head) {
+        Node fast=head;
+        Node slow=head;
+
+        while(fast!=null &&fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        return slow;
+}
     
 
 
@@ -217,7 +252,9 @@ public class LinkedList {
         list2.insertAtBeginning(1);
         list1.printList();
         list2.printList();
+        System.out.println(        list1.middleNode(list1.head).data);
         list.mergetwoSortedLinkedList(list1, list2);
+        System.out.println(list.happynumber(19));
     }
 
 }

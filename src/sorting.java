@@ -35,12 +35,15 @@ public class sorting {
         }
     }
     public static int[] mergeSort(int[] arr){
-        if(arr.length==1){
+ 
+       if(arr.length==1){
             return arr;
         }
         int mid = arr.length/2;
         int[] left= Arrays.copyOfRange(arr, 0,mid);
         int[] right = Arrays.copyOfRange(arr, mid, arr.length);
+        left = mergeSort(left);  // Sort the left half
+        right = mergeSort(right); 
         return merge(left,right);
     }
     // bubble sort i
@@ -81,7 +84,6 @@ public class sorting {
         int[] b = mergeSort(a);
         System.out.println(Arrays.toString(b));
         System.out.println(Arrays.toString(a));
-
-        System.out.println(Arrays.toString(a)); // Should output [1, 2, 3, 4, 5]
+ // Should output [1, 2, 3, 4, 5]
     }
 }
