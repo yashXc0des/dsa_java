@@ -84,6 +84,6 @@ public class sorting {
         int[] b = mergeSort(a);
         System.out.println(Arrays.toString(b));
         System.out.println(Arrays.toString(a));
- // Should output [1, 2, 3, 4, 5]
+
     }
 }
